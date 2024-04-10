@@ -24,16 +24,20 @@ void swap_elements(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i;
+	size_t i, j;
 
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		print_array(array, size);
-
-		if (array[i] > array[i + 1])
-			swap_elements (&array[i], &array[i + 1]);
+		for (j = 0; j < size - i - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				swap_elements (&array[j], &array[j + 1]);
+				print_array(array, size);
+			}
+		}
 	}
 }
