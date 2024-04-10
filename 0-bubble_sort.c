@@ -24,6 +24,8 @@ void swap_elements(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
+	size_t i;
+
 	if (array == NULL)
 		return;
 
@@ -32,6 +34,6 @@ void bubble_sort(int *array, size_t size)
 		print_array(array, size);
 
 		if (array[i] > array[i + 1])
-			swap_elements (array[i], array[i + 1]);
+			swap_elements (&array[i], &array[i + 1]);
 	}
 }
