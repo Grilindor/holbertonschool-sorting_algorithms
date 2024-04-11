@@ -1,18 +1,14 @@
 #include "sort.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0
- */
-/**
- * swap_ints - Swap two elements of an array.
+ * swap_elements - Swap two elements of an array.
  * @a: The first element to swap.
  * @b: The second element to swap.
  */
 void swap_elements(int *a, int *b)
 {
 	int tmp;
+
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
@@ -35,7 +31,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap_elements (&array[j], &array[j + 1]);
+				swap_elements(&array[j], &array[j + 1]);
 				print_array(array, size);
 			}
 		}
