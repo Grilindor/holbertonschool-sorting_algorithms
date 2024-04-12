@@ -12,6 +12,15 @@ void swap_ints(int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
+
+/**
+ *lomuto_partition - Lomuto partition scheme for sort
+ *@array: array to be cut in half
+ *@size: size of the array
+ *@left: move to the left
+ *@right: move to de right
+ *Return: above
+ **/
 int lomuto_partition(int *array, size_t size, int left, int right)
 {
 	int *pivot, above, below;
@@ -38,6 +47,14 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 
 	return (above);
 }
+
+/**
+ *lomuto_sort - Recursive function for Quick Sort
+ *@array: array to be sorted
+ *@size: size of the array
+ *@left: move to the left
+ *@right: move to the right
+ **/
 void lomuto_sort(int *array, size_t size, int left, int right)
 {
 	int part;
@@ -49,6 +66,12 @@ void lomuto_sort(int *array, size_t size, int left, int right)
 		lomuto_sort(array, size, part + 1, right);
 	}
 }
+
+/**
+*quick_sort - sort a array of integers in ascending order
+*@array: the array to sort
+*@size: size of the array
+**/
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
